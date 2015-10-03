@@ -1,0 +1,21 @@
+{
+        "require":
+        {
+        "monolog/monolog":           "dev-master",
+	"phpunit/phpunit": "3.*"
+	
+        },
+	"autoload":
+	{
+	"files": [
+        	"Grocery.php",
+        	"ultimate-web-scraper/support/http.php",
+        	"ultimate-web-scraper/support/web_browser.php",
+        	"ultimate-web-scraper/support/simple_html_dom.php"
+	]
+	},
+        "config":
+        {
+            "bin-dir": "bin"
+        }
+}
