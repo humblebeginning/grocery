@@ -13,5 +13,5 @@ php groceryMain.php -h
 
 To test:
 
-./vendor/phpunit/phpunit/composer/bin/phpunit groceryTest.php
+From the root of install: ./vendor/phpunit/phpunit/composer/bin/phpunit groceryTest.php
 
