@@ -1,11 +1,15 @@
 <?php
 
-	require __DIR__ . '/vendor/autoload.php';
+/**
+ * Main file used to retrieve products from the Sainsburys product category page 
+ *
+ * PHP version 5.3
+ *
+ * @author     Manoj Solanki <manoj@ms4web.co.uk>
+ *
+ */
 
-	//
-	// High level Grocery class.  Very basic and could be further 
-	// enhanced to separate functionality further
-	//
+	require __DIR__ . '/vendor/autoload.php';
 
 	$url = "http://www.sainsburys.co.uk/webapp/wcs/stores/servlet/CategoryDisplay?listView=true&orderBy=FAVOURITES_FIRST&parent_category_rn=12518&top_category=12518&langId=44&beginIndex=0&pageSize=20&catalogId=10137&searchTerm=&categoryId=185749&listId=&storeId=10151&promotionId=#langId=44&storeId=10151&catalogId=10137&categoryId=185749&parent_category_rn=12518&top_category=12518&pageSize=20&orderBy=FAVOURITES_FIRST&searchTerm=&beginIndex=0&hideFilters=true";
 
@@ -26,19 +30,12 @@
 	}
 
 	//
-	// Set up basic logging using Monolog php library
-	//
-	/* $log = new Monolog\Logger('name');
-	$log->pushHandler(new Monolog\Handler\StreamHandler(__FILE__ . ".log", Monolog\Logger::WARNING));
-	$log->addWarning('Foo'); */
-
-	//
 	// Create new instance of Grocery class
 	//
 	$groceryTest = new Grocery();
 
 
-	$logger = $groceryTest->getLogger();
+	$logger = $groceryTest->GetLogger();
 	$logger->info("Starting");
 
 	//
@@ -54,14 +51,11 @@
 	}
 	else
 	{
-
+		// Run class method that processes HTML and creates output JSON file
+		// including any products found
 		$groceryTest->CreateJson($htmlContent);
 	}
 
 	$logger->info("Finished");
-	// $jsonContent = json_encode($productList, 128);
-	// echo $jsonContent;
-
-	// echo "Finished";
 
 ?>
