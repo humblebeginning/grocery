@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class file for Grocery class for use by phpunit
+ * Class file for GroceryTest class for use by phpunit
  *
  * PHP version 5.3
  *
