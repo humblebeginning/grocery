@@ -15,16 +15,16 @@ require __DIR__ . '/vendor/autoload.php';
 /**
   * Grocery class definition
   *
-  * Class used to encapsulate functionality for fetching a product type pages from Sainsburys website.  Very basic
+  * Class used to encapsulate functionality for fetching a product category page from Sainsbury's website.  Very basic
   * and could be enhanced further. Uses Monolog/logger, simple_dom_html.php for DOM parsing and also 
-  * ultimate web scraper library to retrieving the web page.
+  * ultimate web scraper library to retrieve the web page.
   *
   */
 
 Class Grocery
 {
 	/**
-	 * Stores the target web URL for fetching
+	 * Stores the target web URL for fetching.
 	 *
 	 * @var string
 	 * @access private
@@ -33,7 +33,7 @@ Class Grocery
 
 
 	/**
-	 * Variable to point to instance of logger defined by Monolog
+	 * Variable to point to instance of logger defined by Monolog.
 	 *
 	 * @var Monolog\Logger
 	 * @access private
@@ -59,12 +59,8 @@ Class Grocery
 	 * GetLogger()
 	 *
 	 * Sets up logging variable for Monolog if not already defined (unlikely).
-	 * Used in a Singleton-like fashion to ensure one instance of it used.
+	 * Used in a Singleton-like fashion to ensure one instance of it is used.
 	 *
-	 * @param string $arg1 the string to quote
-	 * @param int    $arg2 an integer of how many problems happened.
-	 *                     Indent to the description's starting point
-	 *                     for long ones.
 	 *
 	 * @return Monolog\Logger  Instance of logger
 	 *
@@ -125,7 +121,7 @@ Class Grocery
 	/**
 	 * CreateJson()
 	 *
-	 * Takes HTML content as input and extracts product contents as per Sainsburys product
+	 * Takes HTML content as input and extracts product contents as per Sainsbury's product
 	 * HTML structure.  Outputs content to file name in JSON format as per requirements.
 	 *
 	 * @param string $htmlContent  HTML content to process
